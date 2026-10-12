@@ -15,8 +15,8 @@ hook 到当前歌曲 → 拿数字 songId → 从 QQ 音乐服务器下载已分
 
 | APK | 说明 |
 |---|---|
-| `QQMusicMiProvider-1.0.0-release.apk` | 正式版，**不写日志**，日常用这个 |
-| `QQMusicMiProvider-1.0.0-debug.apk` | 带日志，出问题时用（日志路径见下） |
+| `QQMusicMiProvider-1.0.0-release.apk` | 正式版，**不写日志**， |
+| `QQMusicMiProvider-1.0.0-debug.apk` | 日志版 |
 
 步骤：
 
@@ -36,7 +36,7 @@ hook android.media.session.MediaSession.setMetadata
   └─ setPlaybackState → 转发给词幕
 ```
 
-### 取 songId：两条路互为兜底
+### 取 songId：
 
 ```
 ① 权威（不联网）
@@ -82,7 +82,7 @@ QQ 音乐小米版再升级时的排查顺序：
 
 ## 日志
 
-只有 **debug 版**写日志（正式版里 `flog` 直接短路返回，什么也不写）：
+只有 **debug 版**写日志（正式版里 `flog` 直接短路返回，不写）：
 
 ```
 /data/data/com.miui.player/files/lyricon_mi_debug.log
